@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:travel_ui/widgets/destination_carousel.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -63,7 +64,8 @@ class _HomeState extends State<Home> {
               )
               .toList()
             ),
-            
+            SizedBox(height: 20,),
+         DestinationCarousel(),
         ],),
       ),
     );
