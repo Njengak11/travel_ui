@@ -74,6 +74,11 @@ class _HomeState extends State<Home> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
+        onTap: (int value){
+          setState(() {
+            _currentTab = value;
+          });
+        },
         items: [
           BottomNavigationBarItem( 
             icon:Icon(
@@ -89,7 +94,13 @@ class _HomeState extends State<Home> {
             ),
             title:SizedBox.shrink()
           ),
-          
+           BottomNavigationBarItem( 
+            icon:CircleAvatar( 
+              radius: 15,
+              backgroundImage: NetworkImage('https://www.pexels.com/photo/smiling-woman-with-red-hair-1987301/'),
+            ),
+            title:SizedBox.shrink()
+          ),
         ],
       ),
     );
