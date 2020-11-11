@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_ui/widgets/destination_carousel.dart';
+import 'package:travel_ui/widgets/hotel_carousel.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   List<IconData> _icons = [
     FontAwesomeIcons.plane,
@@ -66,7 +68,29 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 20,),
          DestinationCarousel(),
+         SizedBox(height: 20,),
+         HotelCarousel(),
         ],),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        items: [
+          BottomNavigationBarItem( 
+            icon:Icon(
+              Icons.search,
+              size: 30,
+            ),
+            title:SizedBox.shrink()
+          ),
+          BottomNavigationBarItem( 
+            icon:Icon(
+              Icons.local_pizza,
+              size: 30,
+            ),
+            title:SizedBox.shrink()
+          ),
+          
+        ],
       ),
     );
   }
